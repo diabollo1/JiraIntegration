@@ -1,0 +1,10 @@
+/venv/
+/.idea/
+
+db.sqlite3
+media
+
+jira_integration/conf/*
+!jira_integration/conf/.gitkeep
+!jira_integration/conf/*_example.py
+*.log
