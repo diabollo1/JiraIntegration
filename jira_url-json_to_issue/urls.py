@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('IssueForm', views.get_name, name='get_name'),
-    path('json/<json1>/', views.jsonn, name='json'),
+    path('post/<json1>/', views.jsonn, name='json'),
+    path('get/', views.gettt, name='gettt'),
 ]

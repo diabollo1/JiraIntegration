@@ -13,7 +13,7 @@ class Jira:
         self.auth = jira_conf.auth
         self.headers = jira_conf.headers
 
-    def create_issue(self, json1):
+    def jira_post(self, json1):
         try:
             response = requests.request(
                 "POST",
@@ -25,6 +25,20 @@ class Jira:
             # print("++++++++++++++++++++++++++++" + str(response.text))
             # print("+++" + str(json.loads(response.text)["issues"]))
 
+        except Error as e:
+            print("Error creating issue" + str(e))
+
+        return response
+
+    def jira_get(self, json1):
+        try:
+            # response = requests.get(json1)
+            response = requests.request(
+                "GET",
+                json1,
+                headers=self.headers,
+                auth=self.auth
+            )
         except Error as e:
             print("Error creating issue" + str(e))
 
